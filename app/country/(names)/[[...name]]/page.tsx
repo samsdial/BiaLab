@@ -50,9 +50,8 @@ const page: FC<PageProps> = ({ params }) => {
     .map(([key, value]) => `<span id="${key}">${value}</span>`)
     .join(', ');
   const currenciesArray = country[0]?.currencies || {};
-  const currencies = Object.keys(currenciesArray).map((key) => {
-    const currency = currenciesArray[key];
-    const { name, symbol } = currency;
+  const currencies = Object.entries(currenciesArray).map(([key, value]) => {
+    const { name, symbol } = value;
     return `${key}: ${name} - ${symbol}`;
   });
   const topLevelDomain = country[0]?.tld[0] || '';
