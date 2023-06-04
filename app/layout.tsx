@@ -1,6 +1,8 @@
 import React from 'react';
 import './globals.sass';
 import { Inter } from 'next/font/google';
+import Provider from "./provider";
+import DarkModeBtn from "./components/DarkModeBtn";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Provider>
+          <DarkModeBtn />
+          <main className="container mx-auto">
+            {children}
+          </main>
+        </Provider>
+      </body>
     </html>
   );
 }
