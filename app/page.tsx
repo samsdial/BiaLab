@@ -1,11 +1,11 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import {Country} from '@/app/typings/types';
-import Card from "./components/card";
+import { Country } from './typings/types';
+import Card from './components/card';
 
 const API_URL = 'https://restcountries.com/v3.1/all';
 
