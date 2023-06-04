@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Country } from '@/app/typings/types';
+import { Country } from '../typings/typesgit ';
 
 interface PageProps {
   // eslint-disable-next-line react/no-unused-prop-types
