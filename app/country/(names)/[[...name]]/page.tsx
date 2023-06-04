@@ -35,12 +35,6 @@ const page: FC<PageProps> = ({ params }) => {
   if (!country) {
     return <div>loading...</div>;
   }
-  /*
-  * population: 57557
-  *
-  *  */
-
-  console.log('data:.', country);
   const countryName = country[0]?.name?.common || '';
   const nativeNameArray = country[0]?.name?.nativeName || {};
   const nativeName = Object.keys(nativeNameArray).map((key) => {
