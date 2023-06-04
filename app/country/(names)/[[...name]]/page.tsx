@@ -2,7 +2,7 @@
 
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Country } from '../../../typings/types';
 
 interface PageProps {
@@ -38,13 +38,11 @@ const page: FC<PageProps> = ({ params }) => {
   const countryName = country[0]?.name?.common || '';
   const nativeNameArray = country[0]?.name?.nativeName || {};
   const nativeName = Object.keys(nativeNameArray).map((key) => {
-    const {
-      common: common1,
-      official: official1,
-    } = nativeNameArray[key] || '';
-    const official = official1 || '';
-    const common = common1 || '';
-    return `<span id="${key}">${official} - ${common}</span>`;
+    if (key in nativeNameArray) {
+      const { common, official } = nativeNameArray[key];
+      return `<span id="${key}">${official} - ${common}</span>`;
+    }
+    return '';
   });
   const lanArray = country[0]?.languages || {};
   const lang = Object.entries(lanArray)
