@@ -13,8 +13,8 @@ const page: FC<PageProps> = ({ params }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [country, setCountry] = useState<Country[] | []>([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const router = useRouter();
-  const { name } = router.query || {};
+  // const router = useRouter();
+  // const { name } = router.query || {};
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
