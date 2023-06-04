@@ -37,12 +37,9 @@ const page: FC<PageProps> = ({ params }) => {
   }
   const countryName = country[0]?.name?.common || '';
   const nativeNameArray = country[0]?.name?.nativeName || {};
-  const nativeName = Object.keys(nativeNameArray).map((key) => {
-    if (key in nativeNameArray) {
-      const { common, official } = nativeNameArray[key];
-      return `<span id="${key}">${official} - ${common}</span>`;
-    }
-    return '';
+  const nativeName = Object.entries(nativeNameArray).map(([key, value]) => {
+    const { common, official } = value;
+    return `<span id="${key}">${official} - ${common}</span>`;
   });
   const lanArray = country[0]?.languages || {};
   const lang = Object.entries(lanArray)
