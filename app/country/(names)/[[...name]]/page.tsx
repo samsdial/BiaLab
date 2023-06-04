@@ -3,7 +3,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/navigation";
-import { Country } from '@/app/typings/types';
+import { Country } from '../../../typings/types';
 
 interface PageProps {
   params: { name: string; };
