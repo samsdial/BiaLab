@@ -22,13 +22,17 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          <header className="flex shadow justify-between px-3 py-7 p-lg-7">
-            <div className="flex-grow w-50 w-lg-80">
-              <h1 className="text-xl font-bold">
-                {metadata.title}
-              </h1>
+          <header className="px-3 py-7 p-lg-7 shadow">
+            <div className="container mx-auto">
+              <div className="flex w-10/12 md:w-10/12 lg:w-full mx-auto  justify-between">
+                <div className="flex-grow w-50 w-lg-80">
+                  <h1 className="text-xl font-bold">
+                    {metadata.title}
+                  </h1>
+                </div>
+                <DarkModeBtn />
+              </div>
             </div>
-            <DarkModeBtn />
           </header>
           <main className="container mx-auto">
             {children}

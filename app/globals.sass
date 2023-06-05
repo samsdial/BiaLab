@@ -5,18 +5,42 @@
 :root
     --color-bg: #ffffff
 
+[data-theme="dark"]
+    --color-bg: #212e37
+    --color-header-bg: #2b3743
+    --color-card-bg: #2b3743
+
 body
     background-color: var(--color-bg)
 
 header
     background-color: var(--color-header-bg)
 
-[data-theme="dark"]
-    --color-bg: #212e37
-    --color-header-bg: #2b3743
+select,
+input
+    background-color: var(--color-card-bg)
 
+.card
+    background-color: var(--color-card-bg)
 
+.selected
+    padding-top: 0.8rem
+    padding-bottom: 0.8rem
 
 .box-scroll
     max-height: 70vh
-    overflow: auto
+    overflow: visible
+    width: 90%
+    margin: 0 auto
+
+.btn-ghost
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1000
+    text-indent: 200%
+    white-space: nowrap
+    font-size: 0
+    opacity: 0

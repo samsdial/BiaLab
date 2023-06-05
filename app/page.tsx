@@ -53,37 +53,33 @@ const Home: React.FC = () => {
     setRegionFilter(selectedRegion);
   };
 
-  const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
-    const {
-      scrollTop,
-      clientHeight,
-      scrollHeight,
-    } = event.currentTarget;
-    if (scrollTop + clientHeight >= scrollHeight) {
-      // El usuario ha llegado al final del contenedor, aumenta el número de elementos visibles
-      setVisibleItems((prevVisibleItems) => prevVisibleItems + 8);
-    }
+  const handleSeeMore = () => {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 4);
   };
 
   return (
-
     <div>
-      <h1>Countries</h1>
-      <div>
-        <Input onChange={handleSearch} />
-        <Select value={regionFilter} onChange={handleFilter} />
+      <div className="flex flex-col md:flex-row justify-content-between align-items-center w-10/12 md:w-10/12 lg:w-full mx-auto py-9 xl:px-0">
+        <div className="block w-full">
+          <Input onChange={handleSearch} />
+        </div>
+        <div className="block w-6/12">
+          <Select value={regionFilter} onChange={handleFilter} />
+        </div>
       </div>
-      <div onScroll={handleScroll} className="box-scroll">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-11">
+      <div className="w-8/12 md:w-10/12 lg:w-full mx-auto">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 sm:gap-4 md:gap-8 lg:gap-12">
           {filteredCountries.slice(0, visibleItems)
             .map((country) => (
-              <li key={country.name.official}>
-                <button type="button" onClick={() => handleCountryClick(country)}>
-                  <Card country={country} />
-                </button>
+              <li className="relative" key={country.name.official}>
+                <Card country={country} />
+                <button type="button" className="btn-ghost w-full" onClick={() => handleCountryClick(country)}>card</button>
               </li>
             ))}
         </ul>
+        <div className="flex justify-center mx-4">
+          <button type="button" onClick={handleSeeMore} className="font-semibold shadow hover:font-bold py-2 px-4 hover:border-transparent rounded mt-4 text-center">See more</button>
+        </div>
       </div>
     </div>
   );
