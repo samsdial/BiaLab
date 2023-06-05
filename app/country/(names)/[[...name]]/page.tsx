@@ -3,6 +3,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 // import { useRouter } from "next/navigation";
+import Link from 'next/link';
+import Description from '../../../components/Description';
+import Button from '../../../components/Button';
 import { Country } from '../../../typings/types';
 
 interface PageProps {
@@ -35,53 +38,16 @@ const page: FC<PageProps> = ({ params }) => {
   if (!country) {
     return <div>loading...</div>;
   }
-  const countryName = country[0]?.name?.common || '';
-  const nativeNameArray = country[0]?.name?.nativeName || {};
-  const nativeName = Object.entries(nativeNameArray).map(([key, value]) => {
-    const { common, official } = value;
-    return `<span id="${key}">${official} - ${common}</span>`;
-  });
-  const lanArray = country[0]?.languages || {};
-  const lang = Object.entries(lanArray)
-    .map(([key, value]) => `<span id="${key}">${value}</span>`)
-    .join(', ');
-  const bordersArray = country[0]?.borders || [];
-  const border = Object.entries(bordersArray)
-    .map(([key, value]) => `<span id="${key}">${value}</span>`)
-    .join(', ');
-  const currenciesArray = country[0]?.currencies || {};
-  const currencies = Object.entries(currenciesArray).map(([key, value]) => {
-    const { name, symbol } = value;
-    return `${key}: ${name} - ${symbol}`;
-  });
-  const topLevelDomain = country[0]?.tld[0] || '';
-  const capitalArray = country[0]?.capital || {};
-  const capital = Object.entries(capitalArray)
-    .map(([key, value]) => `<span id="${key}">${value}</span>`)
-    .join(', ');
-  const subRegion = country[0]?.subregion || '';
-  const region = country[0]?.region || '';
-  const population = country[0]?.population || '';
-  const formattedPopulation = population.toLocaleString('en-US', {
-    notation: 'compact',
-    compactDisplay: 'short',
-  });
-  const flags = country[0]?.flags || {};
-  const { png, svg, alt } = flags;
-  const imageUrl = png || svg || '';
   return (
     <div>
-      <img src={imageUrl} alt={alt} />
-      <h1>{countryName}</h1>
-      <p dangerouslySetInnerHTML={{ __html: nativeName }} />
-      <p>{formattedPopulation}</p>
-      <p>{currencies}</p>
-      <p>{region}</p>
-      <p>{subRegion}</p>
-      <p dangerouslySetInnerHTML={{ __html: capital }} />
-      <p>{topLevelDomain}</p>
-      <p dangerouslySetInnerHTML={{ __html: lang }} />
-      <div dangerouslySetInnerHTML={{ __html: border }} />
+      <div className="px-0 py-7 p-lg-7">
+        <div className="container mx-auto">
+          <div className="flex justify-start w-10/12 md:w-10/12 lg:w-full mx-auto  justify-between">
+            <Link href="/"><Button onClick={() => ('')} arrow arrowDown={false} arrowLeft>Back</Button></Link>
+          </div>
+        </div>
+      </div>
+      <Description country={country} />
     </div>
   );
 };
