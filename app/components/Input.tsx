@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import PropTypes from 'prop-types';
 
-const Input = ({ onChange }) => {
+interface InputProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Input: FC<InputProps> = ({ onChange }) => {
   const input = (
     <div className="w-full md:w-3/6 relative mb-6">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -16,11 +19,7 @@ const Input = ({ onChange }) => {
       />
     </div>
   );
-
   return input;
-};
-Input.propTypes = {
-  onChange: PropTypes.func.isRequired,
 };
 
 export default Input;
