@@ -8,6 +8,7 @@ import { Country } from './typings/types';
 import Card from './components/Card';
 import Input from './components/Input';
 import Select from './components/Select';
+import Button from './components/Button';
 
 const API_URL = 'https://restcountries.com/v3.1/all';
 
@@ -56,11 +57,11 @@ const Home: React.FC = () => {
   const handleSeeMore = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 4);
   };
-
+  const lengthCountries = filteredCountries.length >= 8;
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-content-between align-items-center w-10/12 md:w-10/12 lg:w-full mx-auto py-9 xl:px-0">
-        <div className="block w-full">
+        <div className="block w-full md:w-6/12">
           <Input onChange={handleSearch} />
         </div>
         <div className="block w-6/12">
@@ -77,9 +78,11 @@ const Home: React.FC = () => {
               </li>
             ))}
         </ul>
-        <div className="flex justify-center mx-4">
-          <button type="button" onClick={handleSeeMore} className="font-semibold shadow hover:font-bold py-2 px-4 hover:border-transparent rounded mt-4 text-center">See more</button>
-        </div>
+        {lengthCountries && (
+          <div className="flex justify-center my-12">
+            <Button onClick={handleSeeMore} arrow arrowDown>See more</Button>
+          </div>
+        )}
       </div>
     </div>
   );

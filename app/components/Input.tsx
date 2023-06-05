@@ -7,7 +7,7 @@ interface InputProps {
 
 const Input: FC<InputProps> = ({ onChange }) => {
   const input = (
-    <div className="w-full md:w-3/6 relative mb-6">
+    <div className="w-full md:w-2/4 relative mb-6">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <BsSearch className="h-4 w-4 mx-2 cursor-pointer" />
       </div>
