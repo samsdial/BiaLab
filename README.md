@@ -1,34 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto Bia Energy
 
-## Getting Started
+Este proyecto es una aplicación web desarrollada utilizando las siguientes tecnologías:
 
-First, run the development server:
+- [Next.js](https://nextjs.org): Framework de React para crear aplicaciones web modernas y escalables.
+- [React](https://reactjs.org): Biblioteca de JavaScript para construir interfaces de usuario.
+- [Tailwind CSS](https://tailwindcss.com): Framework de CSS utilitario para diseñar rápidamente interfaces atractivas.
+- [TypeScript](https://www.typescriptlang.org): Lenguaje de programación que amplía la sintaxis de JavaScript añadiendo tipos.
+- [Axios](https://axios-http.com): Cliente HTTP basado en promesas para realizar solicitudes a un servidor.
+- [React Icons](https://react-icons.github.io/react-icons): Biblioteca de íconos populares para React.
+- [Next Themes](https://github.com/pacocoursey/next-themes): Plugin de Next.js para implementar temas en una aplicación.
+- [Next Dark Mode](https://github.com/pacocoursey/next-dark-mode): Plugin de Next.js para habilitar un modo oscuro en una aplicación.
+- [Jest](https://jestjs.io): Framework de pruebas unitarias para JavaScript.
+- [ESLint](https://eslint.org): Herramienta de linting para identificar y reportar patrones en código JavaScript/TypeScript.
+- [Prettier](https://prettier.io): Formateador de código para mantener un estilo consistente.
+
+## Instrucciones de Uso
+
+1. Clona este repositorio en tu máquina local.
 
 ```bash
-npm run dev
-# or
+git clone <url-del-repositorio>
+
+2. Navega al directorio del proyecto.
+3. Instala las dependencias utilizando Yarn.
+4. Inicia el servidor de desarrollo.
+5. Abre tu navegador y visita http://localhost:3000 para ver la aplicación en funcionamiento.
+
+## Instrucciones de Uso
+Comandos Disponibles
+
+En el directorio del proyecto, puedes ejecutar los siguientes comandos:
+
+yarn dev: Inicia el servidor de desarrollo.
+yarn build: Crea una versión optimizada para producción de la aplicación.
+yarn start: Inicia un servidor en producción para la aplicación construida.
+yarn lint: Ejecuta ESLint para analizar el código en busca de errores y problemas de estilo.
+yarn test: Ejecuta las pruebas unitarias utilizando Jest.
+yarn coverage: Genera un informe de cobertura de pruebas.
+
+
+¡Claro! Aquí tienes un ejemplo de archivo README para GitHub que incluye las instrucciones detalladas para trabajar con Yarn, así como la URL de prueba para visualizar el proyecto y una descripción de las tecnologías utilizadas. Puedes personalizarlo según tus necesidades:
+
+markdown
+Copy code
+# Proyecto Bia Energy
+
+Este proyecto es una aplicación web desarrollada utilizando las siguientes tecnologías:
+
+- [Next.js](https://nextjs.org): Framework de React para crear aplicaciones web modernas y escalables.
+- [React](https://reactjs.org): Biblioteca de JavaScript para construir interfaces de usuario.
+- [Tailwind CSS](https://tailwindcss.com): Framework de CSS utilitario para diseñar rápidamente interfaces atractivas.
+- [TypeScript](https://www.typescriptlang.org): Lenguaje de programación que amplía la sintaxis de JavaScript añadiendo tipos.
+- [Axios](https://axios-http.com): Cliente HTTP basado en promesas para realizar solicitudes a un servidor.
+- [React Icons](https://react-icons.github.io/react-icons): Biblioteca de íconos populares para React.
+- [Next Themes](https://github.com/pacocoursey/next-themes): Plugin de Next.js para implementar temas en una aplicación.
+- [Next Dark Mode](https://github.com/pacocoursey/next-dark-mode): Plugin de Next.js para habilitar un modo oscuro en una aplicación.
+- [Jest](https://jestjs.io): Framework de pruebas unitarias para JavaScript.
+- [ESLint](https://eslint.org): Herramienta de linting para identificar y reportar patrones en código JavaScript/TypeScript.
+- [Prettier](https://prettier.io): Formateador de código para mantener un estilo consistente.
+
+## Instrucciones de Uso
+
+1. Clona este repositorio en tu máquina local.
+
+```bash
+git clone <url-del-repositorio>
+Navega al directorio del proyecto.
+bash
+Copy code
+cd <nombre-del-proyecto>
+Instala las dependencias utilizando Yarn.
+bash
+Copy code
+yarn install
+Inicia el servidor de desarrollo.
+bash
+Copy code
 yarn dev
-# or
-pnpm dev
-```
+Abre tu navegador y visita http://localhost:3000 para ver la aplicación en funcionamiento.
+Comandos Disponibles
+En el directorio del proyecto, puedes ejecutar los siguientes comandos:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+yarn dev: Inicia el servidor de desarrollo.
+yarn build: Crea una versión optimizada para producción de la aplicación.
+yarn start: Inicia un servidor en producción para la aplicación construida.
+yarn lint: Ejecuta ESLint para analizar el código en busca de errores y problemas de estilo.
+yarn test: Ejecuta las pruebas unitarias utilizando Jest.
+yarn coverage: Genera un informe de cobertura de pruebas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## URL de Prueba
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Puedes ver una versión en funcionamiento del proyecto en la siguiente URL:
 
-## Learn More
+https://bia-40r9tvztf-samsdial.vercel.app/
 
-To learn more about Next.js, take a look at the following resources:
+## Instrucciones de Uso
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Puedes encontrar el código fuente de este proyecto en mi repositorio de GitHub:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+https://github.com/samsdial/BiaLab
 
-## Deploy on Vercel
+#### Desarrollado por:
+https://github.com/samsdial
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+¡Disfruta del proyecto! Si tienes alguna pregunta, no dudes en contactarme.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
