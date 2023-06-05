@@ -72,7 +72,7 @@ const Page: FC<PageProps> = ({ params }) => {
       <div className="px-0 py-7 p-lg-7">
         <div className="container mx-auto">
           <div className="flex justify-start w-10/12 md:w-10/12 lg:w-full mx-auto  justify-between">
-            <Link href="/"><Button arrow arrowDown={false} arrowLeft>Back</Button></Link>
+            <Link href="/"><Button onClick={() => window.history.back()} arrow arrowDown={false} arrowLeft>Back</Button></Link>
           </div>
         </div>
       </div>
