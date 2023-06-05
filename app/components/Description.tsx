@@ -6,7 +6,9 @@ import { Country } from '../typings/types';
 
 interface DesciptionProps {
   // eslint-disable-next-line react/no-unused-prop-types
-  params: string;
+  params: {
+    name: string;
+  }[];
 }
 
 const Description: FC<DesciptionProps> = ({ params }) => {
