@@ -1,12 +1,36 @@
-import React, { FC } from 'react';
+'use client';
+
+import React, { FC, useEffect, useState } from 'react';
+import axios from 'axios';
 import { Country } from '../typings/types';
 
 interface DesciptionProps {
   // eslint-disable-next-line react/no-unused-prop-types
-  country: Country;
+  params: string;
 }
 
-const Description: FC<DesciptionProps> = ({ country }) => {
+const Description: FC<DesciptionProps> = ({ params }) => {
+  const [country, setCountry] = useState<Country[] | []>([]);
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://restcountries.com/v3.1/name/${params.name}?fullText=true`);
+        const { data } = response;
+        setCountry(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    if (params.name) {
+      fetchData();
+    }
+  }, [params.name]);
+
+  if (!country) {
+    return <div>loading...</div>;
+  }
   const countryName = country[0]?.name?.common || '';
   const nativeNameArray = country[0]?.name?.nativeName || {};
   const nativeName = Object.entries(nativeNameArray).map(([key, value]) => {
