@@ -26,7 +26,7 @@ const Description: FC<DesciptionProps> = ({ params }) => {
         console.error('Error fetching data:', error);
       }
     };
-    if (params.name) {
+    if (params && params.name) {
       fetchData();
     }
   }, [params.name]);
