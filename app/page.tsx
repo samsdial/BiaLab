@@ -80,7 +80,7 @@ const Home: React.FC = () => {
         </ul>
         {lengthCountries && (
           <div className="flex justify-center my-12">
-            <Button onClick={handleSeeMore} arrow arrowDown>See more</Button>
+            <Button onClick={handleSeeMore} arrow arrowDown arrowLeft={false}>See more</Button>
           </div>
         )}
       </div>
