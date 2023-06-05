@@ -14,11 +14,12 @@ interface DesciptionProps {
 const Description: FC<DesciptionProps> = ({ params }) => {
   const [country, setCountry] = useState<Country[] | []>([]);
 
+  const Name = params?.name || '';
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://restcountries.com/v3.1/name/${params.name}?fullText=true`);
+        const response = await axios.get(`https://restcountries.com/v3.1/name/${Name}?fullText=true`);
         const { data } = response;
         setCountry(data);
       } catch (error) {
