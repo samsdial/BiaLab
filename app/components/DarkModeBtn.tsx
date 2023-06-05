@@ -1,5 +1,6 @@
-"use client";
-import React, {useEffect} from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { BsSun, BsFillMoonFill } from 'react-icons/bs';
 
@@ -10,9 +11,10 @@ const DarkModeBtn = () => {
   if (!mounted) return null;
   const currentTheme = theme === 'system' ? systemTheme : theme;
   return (
-    <>
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <div>
       {currentTheme === 'dark' ? <BsSun className="h-6 w-6 cursor-pointer" onClick={() => setTheme('light')} /> : <BsFillMoonFill className="h-6 w-6 cursor-pointer" onClick={() => setTheme('dark')} />}
-    </>
+    </div>
   );
 };
 export default DarkModeBtn;

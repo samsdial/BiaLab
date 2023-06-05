@@ -9,7 +9,7 @@ import Card from './components/card';
 
 const API_URL = 'https://restcountries.com/v3.1/all';
 
-export default function Home() {
+const Home: React.FC = () => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
   const [regionFilter, setRegionFilter] = useState<string>('');
@@ -20,8 +20,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get(API_URL);
-        const {data} = response;
-
+        const { data } = response;
         setCountries(data);
         setFilteredCountries(data);
       } catch (error) {
@@ -69,30 +68,27 @@ export default function Home() {
     <div>
       <h1>Countries</h1>
       <div>
-        <input type="text" placeholder="Search..." onChange={handleSearch}/>
+        <input type="text" placeholder="Search..." onChange={handleSearch} />
         <select value={regionFilter} onChange={handleFilter}>
-          <option value="">All regions</option>
+          <option value="0">All regions</option>
           <option value="Americas">Americas</option>
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
-          {/* Add more regions as needed */}
         </select>
       </div>
-      <div onScroll={handleScroll} style={{
-        maxHeight: '70vh',
-        overflow: 'auto',
-      }}>
+      <div onScroll={handleScroll} className="box-scroll">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-11">
           {filteredCountries.slice(0, visibleItems)
             .map((country) => (
               <li key={country.name.official}>
-                <a onClick={() => handleCountryClick(country)}>
+                <button type="button" onClick={() => handleCountryClick(country)}>
                   <Card country={country} />
-                </a>
+                </button>
               </li>
             ))}
         </ul>
       </div>
     </div>
   );
-}
+};
+export default Home;

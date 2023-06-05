@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 
 interface PageProps {
   params: { name: string[]; };
@@ -8,9 +8,9 @@ const head: FC<PageProps> = ({ params }) => {
   const [name] = params.name;
 
   return (
-    <Fragment>
+    <head>
       <title>{name}</title>
-    </Fragment>
+    </head>
   );
 };
 export default head;
