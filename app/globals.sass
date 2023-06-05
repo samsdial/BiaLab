@@ -2,10 +2,20 @@
 @tailwind components
 @tailwind utilities
 
-$color-primary: red
+:root
+    --color-bg: #ffffff
 
-.title
-    color: $color-primary
+body
+    background-color: var(--color-bg)
+
+header
+    background-color: var(--color-header-bg)
+
+[data-theme="dark"]
+    --color-bg: #212e37
+    --color-header-bg: #2b3743
+
+
 
 .box-scroll
     max-height: 70vh

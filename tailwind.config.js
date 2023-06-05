@@ -6,8 +6,17 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: { },
+    extend: {
+      extend: {
+        fontFamily: {
+          'Anton': ['Anton', 'sans-serif',],
+        },
+        colors: {
+          golden: '#ddb46a'
+        },
+      },
+    },
   },
-  darkMode: 'class',
+  darkMode: ['class', '[data-mode="dark"]'],
   plugins: [],
 }

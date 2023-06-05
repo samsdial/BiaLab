@@ -5,7 +5,9 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { Country } from './typings/types';
-import Card from './components/card';
+import Card from './components/Card';
+import Input from './components/Input';
+import Select from './components/Select';
 
 const API_URL = 'https://restcountries.com/v3.1/all';
 
@@ -68,13 +70,8 @@ const Home: React.FC = () => {
     <div>
       <h1>Countries</h1>
       <div>
-        <input type="text" placeholder="Search..." onChange={handleSearch} />
-        <select value={regionFilter} onChange={handleFilter}>
-          <option value="0">All regions</option>
-          <option value="Americas">Americas</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+        <Input onChange={handleSearch} />
+        <Select value={regionFilter} onChange={handleFilter} />
       </div>
       <div onScroll={handleScroll} className="box-scroll">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-11">
