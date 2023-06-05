@@ -12,7 +12,7 @@ interface DesciptionProps {
 }
 
 const Description: FC<DesciptionProps> = ({ params }) => {
-  const [country, setCountry] = useState<Country[] | []>([]);
+  const [country, setCountry] = useState<Country[] | undefined>(undefined);
 
   const Name = params?.name || '';
   // eslint-disable-next-line react-hooks/rules-of-hooks
